@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+            {
+                    "name": "Launch server",
+                    "request": "launch",
+                    "runtimeArgs": ["run-script", "dev"],
+                    "runtimeExecutable": "npm",
+                    "skipFiles": ["<node_internals>/**"],
+                    "type": "node",
+                    "console": "integratedTerminal"
+            },
+
+            {
+                "command": "npx vavite-loader vite dev",
+                "name": "Launch SvelteKit server",
+                "request": "launch",
+                "type": "node-terminal"
+            },
+
+            {
+                    "type": "chrome",
+                    "request": "launch",
+                    "name": "Launch Chrome",
+                    "url": "http://127.0.0.1:5173",
+                    "webRoot": "${workspaceFolder}"
+            }
+    ],
+    "compounds": [
+            {
+                    "name": "Both",
+                    "configurations": ["Launch server", "Launch Chrome"]
+            }
+    ]
+}
