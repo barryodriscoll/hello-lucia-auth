@@ -1,6 +1,5 @@
 import { auth } from '$lib/server/lucia';
 import { fail, redirect } from '@sveltejs/kit';
-import { PrismaClient } from '@prisma/client'
 
 import type { PageServerLoad, Actions } from './$types';
 
@@ -11,8 +10,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 		userId: session.user.userId,
 		username: session.user.username
 	};
-
-	const db = new PrismaClient()
 };
 
 export const actions: Actions = {
